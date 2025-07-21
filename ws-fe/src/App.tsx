@@ -112,7 +112,7 @@ function App() {
                 messageRef.current.value = "";
               }
             }}/>
-          <button className='flex-[1] bg-black text-white p-3 rounded-xl' onClick={()=>{
+          <button className='flex-[1] bg-black text-white p-3 rounded-xl cursor-pointer' onClick={()=>{
             const message = messageRef.current?.value;
             wsRef.current.send(JSON.stringify({
               type: "chat",
