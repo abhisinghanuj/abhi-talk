@@ -30,6 +30,10 @@ function App() {
           }
         }))
       }
+        ws.onclose = (event) => {
+      console.warn("WebSocket closed:", event.reason || "No reason provided");
+      setMessages(prev => [...prev, { name: "System", message: "Disconnected from server." }]);
+      };
       }
   },[phase]);
   if (phase === "init") {
